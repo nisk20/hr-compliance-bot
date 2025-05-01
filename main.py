@@ -42,3 +42,5 @@ def handle_query(q: str):
     response = classify_and_route(q)
     log_chat(q, response)  # 👈 Log every chat here
     return {"response": response}
+
+

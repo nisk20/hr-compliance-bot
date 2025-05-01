@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fastapi
 uvicorn
 httpx
@@ -7,3 +8,13 @@ azure-ai-inference
 azure-search-documents
 azure-ai-evaluation
 azure-monitor-opentelemetry
+=======
+openai
+langchain
+pydantic
+fastapi
+uvicorn
+tiktoken
+python-dotenv
+httpx
+>>>>>>> 79deeaad3b4966ad99935147301c834e018197ec

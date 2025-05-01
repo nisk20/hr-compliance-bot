@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HR Compliance Chatbot</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    #chat-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      height: 400px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+    }
+    .message {
+      margin: 10px 0;
+    }
+    .user { text-align: right; color: #333; }
+    .bot { text-align: left; color: #1a73e8; }
+    .timestamp { font-size: 12px; color: #888; }
+    input, button {
+      font-size: 16px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Ask the HR Compliance Bot</h2>
+  <div id="chat-box"></div>
+  <input type="text" id="query" placeholder="Type your question..." size="60">
+  <button onclick="askBot()">Ask</button>
+
+  <script>
+    const chatBox = document.getElementById("chat-box");
+
+    function addMessage(sender, text) {
+      const msgDiv = document.createElement("div");
+      msgDiv.classList.add("message", sender);
+
+      const timestamp = new Date().toLocaleTimeString();
+
+      msgDiv.innerHTML = `<div><strong>${sender === "user" ? "You" : "🤖 Bot"}:</strong> ${text}</div>
+                          <div class="timestamp">${timestamp}</div>`;
+      chatBox.appendChild(msgDiv);
+      chatBox.scrollTop = chatBox.scrollHeight; // auto-scroll
+    }
+
+    async function askBot() {
+      const input = document.getElementById("query");
+      const question = input.value.trim();
+      if (!question) return;
+
+      addMessage("user", question);
+      input.value = "";
+
+      try {
+        const res = await fetch(`/query?q=${encodeURIComponent(question)}`);
+        const data = await res.json();
+        addMessage("bot", data.response);
+      } catch (err) {
+        addMessage("bot", "Sorry, there was an error.");
+        console.error(err);
+      }
+    }
+  </script>
+</body>
+</html>

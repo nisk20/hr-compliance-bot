@@ -1,0 +1,18 @@
+name: hr-compliance-bot
+description: Multi-agent HR Compliance chatbot with Azure OpenAI and optional Bing search
+version: 1.0.0
+
+entry: main:app  # FastAPI entrypoint (module:app)
+language: python
+
+env:
+  AZURE_OPENAI_API_KEY: ${AZURE_OPENAI_API_KEY}
+  AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT}
+  AZURE_OPENAI_DEPLOYMENT: ${AZURE_OPENAI_DEPLOYMENT}
+  AZURE_OPENAI_API_VERSION: ${AZURE_OPENAI_API_VERSION}
+  BING_SEARCH_API_KEY: ${BING_SEARCH_API_KEY}
+
+build:
+  system:
+    python_version: "3.11"
+    requirements: requirements.txt

@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+httpx
+azure-ai-projects
+azure-identity
+azure-ai-inference
+azure-search-documents
+azure-ai-evaluation
+azure-monitor-opentelemetry

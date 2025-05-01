@@ -1,0 +1,9 @@
+{
+    "name": "Python AI Bot",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "features": {
+      "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "postCreateCommand": "pip install -r requirements.txt"
+  }
+  

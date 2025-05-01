@@ -1,0 +1,14 @@
+labor_laws:
+  - "minimum wage"
+  - "employment contract"
+  - "termination"
+
+human_rights:
+  - "harassment"
+  - "discrimination"
+  - "equal opportunity"
+
+ohs:
+  - "injury"
+  - "safety"
+  - "workplace hazard"

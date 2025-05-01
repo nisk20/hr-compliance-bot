@@ -1,20 +1,28 @@
-<<<<<<< HEAD
+# Core frameworks
 fastapi
 uvicorn
 httpx
+
+# Azure SDKs
 azure-ai-projects
 azure-identity
 azure-ai-inference
 azure-search-documents
 azure-ai-evaluation
 azure-monitor-opentelemetry
-=======
+
+# LLMs + Agents
 openai
 langchain
-pydantic
-fastapi
-uvicorn
+langchain-community
 tiktoken
 python-dotenv
-httpx
->>>>>>> 79deeaad3b4966ad99935147301c834e018197ec
+pydantic
+
+# Mistral + Transformers (from Hugging Face)
+transformers
+torch
+
+
+# Chainlit UI
+chainlit
